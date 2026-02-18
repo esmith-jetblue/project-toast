@@ -31,10 +31,15 @@ function ToastProvider({ children }) {
     [removeToast, setToasts]
   );
 
+  const resetToasts = React.useCallback(() => {
+    setToasts([]);
+  }, [setToasts]);
+
   const providerValue = {
     toasts,
     addToast,
     removeToast,
+    resetToasts,
   };
 
   return (
